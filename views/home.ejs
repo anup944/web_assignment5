@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Climate Solutions</title>
+  <link href="/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 h-screen">
+  <!-- Include Navbar -->
+  <%- include('partials/navbar', {page: '/'}) %>
+  
+  <!-- Hero Section -->
+  <div class="main-container w-full">
+    <div class="flex justify-center mb-8 h-52">
+      <div class="bg-white px-8 w-4/5 rounded-md">
+        <h1 class="text-6xl text-red-600 font-bold text-center">Welcome</h1>
+        <p class="text-center text-gray-600 mt-6">Browse our current collection of modern solutions to help fight Climate Change.</p>
+        <div class="flex justify-center mt-6">
+          <a href="/solutions/projects" class="button text-center bg-green-600 px-6 py-3 rounded-xl text-white font-semibold">Get Started Now</a>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    <!-- Project Grid -->
+    <div class="project-container flex justify-center bg-gray-100 h-96">
+      <div class="w-4/5 flex justify-evenly bg-white py-8 rounded-md">
+<!-- Project 1 -->
+<div class="project w-1/4 shadow-lg">
+  <div class="project-image">
+    <img src="https://drawdown.org/sites/default/files/solutions/solution_farmlandrestoration01.jpg" alt="Abandoned Farmland Restoration" class="rounded-tr-md rounded-tl-md">
+  </div>
+  <div class="project-content px-4">
+    <h3 class="font-semibold text-blue-950">Abandoned Farmland Restoration</h3>
+    <p class="opacity-60">Restoration can bring degraded farmland back into productivity and sequester carbon in the process.</p>
+  </div>
+</div>
+
+<!-- Project 2 -->
+<div class="project w-1/4 shadow-lg">
+  <div class="project-image">
+    <img src="https://drawdown.org/sites/default/files/solutions2020/solution_alternativecement02.jpg" alt="Alternative Cement" class="rounded-tr-md rounded-tl-md">
+  </div>
+  <div class="project-content px-4">
+    <h3 class="font-semibold">Alternative Cement</h3>
+    <p class="opacity-60">Conventional cement production is a significant source of carbon dioxide. Reformulation can reduce emissions by millions of metric tons each year.</p>
+  </div>
+</div>
+
+<!-- Project 3 -->
+<div class="project w-1/4 shadow-lg">
+  <div class="project-image">
+    <img src="https://drawdown.org/sites/default/files/solutions2020/solution_bicycle_infrastructure.jpg" alt="Bicycle Infrastructure" class="rounded-tr-md rounded-tl-md">
+  </div>
+  <div class="project-content px-4">
+    <h3 class="font-semibold">Bicycle Infrastructure</h3>
+    <p class="opacity-60">Infrastructure is essential for supporting safe and abundant bicycle use, which curbs emissions by reducing the need for fossil-fuel-dependent transportation.</p>
+  </div>
+</div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- Include Footer -->
+  <%- include('partials/footer') %>
+</body>
+</html>

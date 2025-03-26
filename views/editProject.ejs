@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Project</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body class="bg-gray-100">
+  <%- include('partials/navbar', { page: '' }) %>
+
+  <div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-6">Edit Project: <%= project.title %></h1>
+
+    <form action="/solutions/editProject" method="POST" class="bg-white p-6 rounded-lg shadow-md">
+      <input type="hidden" name="id" value="<%= project.id %>">
+
+      <div class="mb-4">
+        <label for="title" class="block text-gray-700">Title</label>
+        <input type="text" id="title" name="title" value="<%= project.title %>" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+      </div>
+
+      <div class="mb-4">
+        <label for="feature_img_url" class="block text-gray-700">Feature Image URL</label>
+        <input type="url" id="feature_img_url" name="feature_img_url" value="<%= project.feature_img_url %>" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+      </div>
+
+      <div class="mb-4">
+        <label for="sector_id" class="block text-gray-700">Sector</label>
+        <select id="sector_id" name="sector_id" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+          <% sectors.forEach(sector => { %>
+            <option value="<%= sector.id %>" <%= (project.sector_id == sector.id) ? 'selected' : '' %>>
+              <%= sector.sector_name %>
+            </option>
+          <% }) %>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label for="intro_short" class="block text-gray-700">Short Introduction</label>
+        <textarea id="intro_short" name="intro_short" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"><%= project.intro_short %></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="summary_short" class="block text-gray-700">Short Summary</label>
+        <textarea id="summary_short" name="summary_short" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"><%= project.summary_short %></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="impact" class="block text-gray-700">Impact</label>
+        <textarea id="impact" name="impact" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"><%= project.impact %></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="original_source_url" class="block text-gray-700">Original Source URL</label>
+        <input type="url" id="original_source_url" name="original_source_url" value="<%= project.original_source_url %>" required
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+        Update Project
+      </button>
+    </form>
+
+    <form action="/solutions/deleteProject/<%= project.id %>" method="GET" class="mt-4">
+      <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700">
+        Delete Project
+      </button>
+    </form>
+  </div>
+</body>
+</html>

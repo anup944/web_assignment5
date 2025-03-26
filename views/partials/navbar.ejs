@@ -1,0 +1,12 @@
+<div class="navbar flex justify-center bg-gray-100">
+  <div class="navbar-content w-4/5">
+    <div class="flex-1">
+      <a href="/" class="logo text-3xl font-semibold text-blue-800">Climate Solutions</a>
+    </div>
+    <div class="navbar-links flex gap-8 text-blue-950 font-medium opacity-70">
+      <a href="/solutions/projects" class="<%= (page === '/solutions/projects') ? 'active' : '' %>">View Projects</a>
+      <a href="/about" class="<%= (page === '/about') ? 'active' : '' %>">About</a>
+      <a href="/solutions/addProject" class="<%= (page === '/solutions/addProject') ? 'active' : '' %>">Add Project</a>
+    </div>
+  </div>
+</div>
