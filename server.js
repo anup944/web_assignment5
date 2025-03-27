@@ -1,3 +1,14 @@
+/********************************************************************************
+* WEB322 – Assignment 04
+*
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+*
+* https://www.senecapolytechnic.ca/about/policies/academic-integrity-policy.html
+*
+* Name: Anup Oli  Student ID: 145433231 Date: 03/21/2025
+*
+********************************************************************************/
 const express = require("express");
 const path = require("path");
 const projects = require("./modules/projects");
